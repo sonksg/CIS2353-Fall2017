@@ -16,6 +16,7 @@ public class ExampleWeek0 {
      */
     public static void main(String[] args) {
         System.out.println("Hello World!");
+        System.out.println("I just changed this on github.com, I hope it works, I can't compile here");
     }
     
 }
