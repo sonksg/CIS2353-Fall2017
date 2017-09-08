@@ -36,7 +36,7 @@ public class PowerBallSimulator {
                 totalWon += myTicket.getWinnings( winningTicket );
                 if ( myTicket.getWinnings(winningTicket ) == 1000000000 )
                 {
-                    JOptionPane.showMessageDialog(null, "JACKPOT!!!");
+                    JOptionPane.showMessageDialog(null, "JACKPOT");
                 }
             }
             String message = String.format("Total Spent: %d - Total Won: %d - Net Loss: %d", 
