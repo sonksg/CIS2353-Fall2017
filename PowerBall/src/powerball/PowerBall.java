@@ -45,6 +45,18 @@ public class PowerBall {
     public PowerBall(int[] whiteBalls, int redBall)
     {
         // TODO - this is bad - we should check for dupes
+        for ( int index = 1; index < whiteBalls.length; index++ )
+        {
+            for ( int ballToCheck = 0; ballToCheck < index; ballToCheck++ )
+            {
+                if (whiteBalls[ballToCheck] == whiteBalls[index])
+                {
+                    // do something here
+                }
+            }
+        
+        }
+        
         this.whiteBalls = whiteBalls;
         this.redBall = redBall;
     }
