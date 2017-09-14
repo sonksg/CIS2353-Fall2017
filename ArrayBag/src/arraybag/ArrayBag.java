@@ -81,12 +81,34 @@ public class ArrayBag<T> implements BagInterface<T>
 
     @Override
     public int getFrequencyOf(T item) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        int frequency = 0;
+        int currentIndex = 0;
+        while ( currentIndex < currentSize)
+        {
+            if ( bag[currentIndex].equals( item ) )
+            {
+                frequency++;
+            }
+            currentIndex++;
+        }
+        
+        return frequency;
     }
 
     @Override
     public boolean contains(T item) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        boolean contains = false;
+        int currentIndex = 0;
+        while ( !contains && currentIndex < currentSize)
+        {
+            if ( bag[currentIndex].equals( item ) )
+            {
+                contains = true;
+            }
+            currentIndex++;
+        }
+        
+        return contains;
     }
 
     @Override

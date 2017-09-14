@@ -130,35 +130,54 @@ public class ArrayBagTest {
     }
 
     @Test
-    public void testGetFrequencyOf() {
+    public void testGetFrequencyOf_notPresent() {
         System.out.println("getFrequencyOf");
-        Object item = null;
-        ArrayBag instance = new ArrayBag();
+        String item = "something";
+        ArrayBag<String> instance = new ArrayBag<String>();
         int expResult = 0;
+        
         int result = instance.getFrequencyOf(item);
+        
         assertEquals(expResult, result);
-        fail("The test case is a prototype.");
-    }
-
-    @Test
-    public void testContains() {
-        System.out.println("contains");
-        Object item = null;
-        ArrayBag instance = new ArrayBag();
-        boolean expResult = false;
-        boolean result = instance.contains(item);
-        assertEquals(expResult, result);
-        fail("The test case is a prototype.");
-    }
-
-    @Test
-    public void testToArray() {
-        System.out.println("toArray");
-        ArrayBag instance = new ArrayBag();
-        Object[] expResult = null;
-        Object[] result = instance.toArray();
-        assertArrayEquals(expResult, result);
-        fail("The test case is a prototype.");
     }
     
+    @Test
+    public void testGetFrequencyOf_isPresent() {
+        System.out.println("getFrequencyOf");
+        String item = "something";
+        ArrayBag<String> instance = new ArrayBag<String>();
+        instance.add(item);
+        instance.add(item);
+        int expResult = 2;
+        
+        int result = instance.getFrequencyOf(item);
+        
+        assertEquals(expResult, result);
+    }
+
+    @Test
+    public void testContains_doesNotContain() {
+        System.out.println("contains");
+        String item = "contains";
+        boolean expResult = false;
+        
+        ArrayBag<String> instance = new ArrayBag<String>();
+        boolean result = instance.contains(item);
+        
+        assertEquals(expResult, result);
+    }
+    
+    @Test
+    public void testContains_doesContain() {
+        System.out.println("contains");
+        String item = "contains";
+        boolean expResult = true;
+        
+        ArrayBag<String> instance = new ArrayBag<String>();
+        instance.add(item);
+        boolean result = instance.contains(item);
+        
+        assertEquals(expResult, result);
+    }
+   
 }
